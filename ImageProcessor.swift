@@ -12,8 +12,8 @@ open class ImageProcessor {
     
     /////123456
     
-    
-    
+//    llllllllll
+    ////////jfkdjkdjf
     //保存原始图片
     var image:UIImage?
     
