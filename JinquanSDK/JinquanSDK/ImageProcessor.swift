@@ -8,7 +8,8 @@
 
 import Foundation
 
-open class ImageProcessor {
+/// image模糊类
+@objc open class ImageProcessor:NSObject {
     //保存原始图片
     var image:UIImage?
     
@@ -16,13 +17,18 @@ open class ImageProcessor {
         return CIContext(options: nil)
     }()
     
-    //初始化
-    public init(image: UIImage){
+    ///初始化
+    /// - Parameter image: image description
+    @objc public init(image: UIImage){
         self.image = image
     }
   
-    //返回像素化后的图片
-    public func pixellated(scale:Int = 30) -> UIImage? {
+    
+    /// 返回像素化后的图片
+    ///
+    /// - Parameter scale: scale description
+    /// - Returns: image
+    @objc public func pixellated(scale:Int = 30) -> UIImage? {
         if image == nil {
             return nil
         }
@@ -39,8 +45,12 @@ open class ImageProcessor {
         return UIImage(cgImage: cgImage!)
     }
     
-    //返回高斯模糊后的图片
-    public func blured(radius:Int = 40) -> UIImage? {
+    
+    /// 返回高斯模糊后的图片
+    ///
+    /// - Parameter radius: 设置模糊半径值（越大越模糊)
+    /// - Returns:
+    @objc public func blured(radius:Int = 40) -> UIImage? {
         if image == nil {
             return nil
         }
